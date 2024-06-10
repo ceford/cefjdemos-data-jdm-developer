@@ -191,21 +191,22 @@ The following section describes the elements of a single update entity.
     developer level ("z" in x.y.z). They are optional. You can specify
     either one or both. If omitted, all developer levels are matched.
     For example, the following matches versions 4.0.0 and 4.0.1.
+    `<targetplatform name="joomla" version="4.0" min_dev_level="0" max_dev_level="1"/>`
     - **Note:** If your extension is Joomla! 2.5 and/or 3.1 compatible,
       you will be required to have separate definitions for each version
       due to the manner in which the updater checks the version if you
       specify a number. However to show your extension on all Joomla
       versions that support automatic updates (and thus mark as
       compatible with all future unreleased versions of Joomla in Joomla
-      Update) add . If you want your extension to show on all
+      Update) add `<targetplatform name="joomla" version=".*"/>`. If you want your extension to show on all
       <img src="https://docs.joomla.org/images/4/4d/Compat_icon_3_x.png"
       decoding="async" data-file-width="40" data-file-height="17" width="40"
       height="17" alt="Joomla 3.x" /> versions then rather than
-      specifying a version in the version tag add in . This will show
+      specifying a version in the version tag add in `<targetplatform name="joomla" version="3.[012345]"/>`. This will show
       the update to all 3.x versions from version 3.0 to 3.5. If you
-      want to include version 3.10 you can use an `|` like this: . If
+      want to include version 3.10 you can use an `|` like this: `<targetplatform name="joomla" version="3.[012345]|10"/>`. If
       you want to show the updates for all 3.8.x versions and all 3.10.x
-      versions you can use
+      versions you can use `<targetplatform name="joomla" version="3.(8|10)"/>`.
 - **php_minimum** – Beginning with 3.2.2, a minimum supported PHP
   version can be supplied in the update stream. If the server does not
   meet the minimum, a message is displayed to the user advising that an

@@ -22,6 +22,7 @@ developer=developer-information=dependency-injection-in-joomla-4.md
 developer=developer-information=joomla-core-apis.md
 developer=developer-information=api-guides.md
 developer=developer-information=deploying-an-update-server.md
+developer=developer-information=adding-changelog.md
 developer=developer-information=joomla-codesniffer.md
 
 heading=plugin-development=Plugin Development
@@ -36,7 +37,7 @@ heading=module-development=Module Development
 developer=module-development=creating-a-simple-module.md
 developer=module-development=j4-module-example-mydownmsg.md
 
-heading=developing-an-mvc-component= Developing an MVC Component
+heading=developing-an-mvc-component=Developing an MVC Component
 developer=developing-an-mvc-component=developing-an-mvc-component.md
 developer=developing-an-mvc-component=developing-an-mvc-component-introduction.md
 developer=developing-an-mvc-component=developing-an-mvc-component-developing-a-basic-component.md
@@ -81,8 +82,11 @@ developer=coding-examples=how-to-use-the-date-class.md
 heading=advanced-developer=Advanced Developer
 developer=advanced-developer=automated-system-testing.md
 developer=advanced-developer=scss-and-sass.md
+
+heading=advanced-administrator=Advanced Administrator
 developer=advanced-administrator=http-header-management.md
 developer=advanced-administrator=improved-override-management.md
+developer=advanced-administrator=language-pack-updates.md
 
 heading=unclassified=Unclassified
 developer=unclassified=joomla-entities.md
