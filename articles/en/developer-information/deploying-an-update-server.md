@@ -8,9 +8,7 @@ This tutorial is designed to teach developers how to create an update
 server for integration with the update system introduced in Joomla!. By
 adding an update server listing to your extension's manifest, developers
 enable users to update their extensions via the Extension Manager's
-Update (see [Joomla
-3.x](https://docs.joomla.org/Help31:Extensions_Extension_Manager_Update "Special:MyLanguage/Help31:Extensions Extension Manager Update")
-helpscreen) view with only a few clicks.
+Update view with only a few clicks.
 
 ## Defining an update server
 
