@@ -32,7 +32,7 @@ server is defined as follows for each type:
 </extension>
  ```
 
-Multiple servers can be defined within the tag. If you have more than
+Multiple servers can be defined within the `<updateservers>` tag. If you have more than
 one update server, you can set a different priority for each. In that
 way you can control the order in which the update servers are checked.
 
@@ -55,10 +55,10 @@ processing core Joomla! updates:
 </extensionset>
 ```
 
-All definitions must be defined between tags in your collection
-manifest. The tag has two optional parameters; name and description. For
-each extension that this collection references, a separate tag is
-required. The tag has the following parameters, all of which are
+All definitions must be defined between `<extensionset>` tags in your collection
+manifest. The `<extensionset>` tag has two optional parameters; name and description. For
+each extension that this collection references, a separate `<extension>` tag is
+required. The `<extension>` tag has the following parameters, all of which are
 required for updates to properly process:
 
 - **name** – The name of the extension
@@ -73,8 +73,8 @@ required for updates to properly process:
 The `"extension"` server type allows developers to define an extension's
 manifest to pull updates from a single extension's manifest. All
 collection manifests eventually point to this XML file. All updates in
-this file must be defined after an tag at the beginning of the file. The
-below example is the update definition for the Joomla! 3.9.6 release:
+this file must be defined after an `<updates>` tag at the beginning of the file.
+The below example is the update definition for the Joomla! 3.9.6 release:
 
 ```xml
 <updates>
@@ -110,12 +110,12 @@ The following section describes the elements of a single update entity.
 - **name** – The name of the extension, this name will appear in the
   Name column of the Extension Manager's Update view (required)
 - **description** – A short description of the extension (optional) — if
-  you choose to use , double-quotes will break the HTML formatting. Use
+  you choose to use `<![CDATA[]]>`, double-quotes will break the HTML formatting. Use
   single quotes with your HTML entities.
 - **element** – The installed name of the extension (required). For
   plugins, this needs to be same as plugin attribute value for main file
-  in plugin manifest. For pluginname.php, element value should be
-  **pluginname**.
+  in plugin manifest. For `<filename plugin="pluginname">pluginname.php</filename>`
+  pluginname.php, element value should be **pluginname**.
 - **type** – The type of extension (component, module, plugin, etc.)
   (required)
 - **folder** – Specific to plugins, this tag describes the type of
@@ -139,13 +139,13 @@ The following section describes the elements of a single update entity.
   update (optional) (In CMS 2.5, if set, this URL will be displayed in
   the update view)
 - **downloads** – The section which lists all download locations
-  - **downloadurl** – The URL to download the extension from; the tag
-    has two required parameters:
+  - **downloadurl** – The URL to download the extension from; the `<downloadurl>`
+  tag has two required parameters:
     - **type** – The type of package (full or upgrade)
     - **format** – The format of the package (zip, tar, etc.)
   - **downloadsource** – Optional. Since Joomla 3.8.3. Alternative URL
     to download the extension from when the connection to fails.
-    Multiple tags are allowed. The tag has two required parameters:
+    Multiple `<downloadsource>` tags are allowed. The `<downloadsource>` tag has two required parameters:
     - **type** – The type of package (full or upgrade)
     - **format** – The format of the package (zip, tar, etc.)
   - **NB** – there must be no newline before or after the URL; it needs
@@ -173,9 +173,9 @@ The following section describes the elements of a single update entity.
     into account. If you do not provide any tags Joomla! will assume it
     is a stable version.
 - **maintainer** – The name of the extension maintainer (similar to the
-  tag in a manifest) (optional)
+  `<author>` tag in a manifest) (optional)
 - **maintainerurl** – The website of the extension maintainer (similar
-  to the tag in a manifest) (optional)
+  to the `<authorUrl>` tag in a manifest) (optional)
 - **section** – Optional (unknown use)
 - **targetplatform** – A tag to define platform requirements (from
   <img src="https://docs.joomla.org/images/5/55/Compat_icon_3_10.png"
@@ -193,7 +193,7 @@ The following section describes the elements of a single update entity.
     For example, the following matches versions 4.0.0 and 4.0.1.
     `<targetplatform name="joomla" version="4.0" min_dev_level="0" max_dev_level="1"/>`
     - **Note:** If your extension is Joomla! 2.5 and/or 3.1 compatible,
-      you will be required to have separate definitions for each version
+      you will be required to have separate `<update>` definitions for each version
       due to the manner in which the updater checks the version if you
       specify a number. However to show your extension on all Joomla
       versions that support automatic updates (and thus mark as
@@ -222,21 +222,21 @@ The following section describes the elements of a single update entity.
   rel="nofollow noreferrer noopener">As of 3.9.12</a> there is also a
   special case for mariadb so you can set a specific minimum version for
   that too now.
-  - An example could look like this:
+  - An example could look like this: `<supported_databases mysql="5.5.3" mariadb="10.1" postgresql="9.2" mssql="10.50.1600.1" />`
 - **sha256**, **sha384**, **sha512** – Optional. Since Joomla 3.9.0 you
   can add file checksums in these hash formats. Be aware that in Joomla
   3 only a notice is shown on **updates** if a checksum is not correct.
   That's all. The update doesn't stop then. In Joomla 4 updates and
   installations will stop if a provided checksum doesn't match.
 
-A separate definition will be required for each version of your
+A separate `<update>` definition will be required for each version of your
 extension you release.
 
 The values of **element**, **type**, **client_id** and **folder** should
 match those in the table \#\_extensions.
 
-**Important for plugins:** Plugins have to include and elements to work
-properly
+**Important for plugins:** Plugins have to include `<folder>` and `<cient>`
+elements to work properly
 
 ## Troubleshooting
 
