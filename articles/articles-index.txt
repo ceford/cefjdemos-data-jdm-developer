@@ -10,6 +10,7 @@ cli-development=cli-example-onoffbydate.md=https://docs.joomla.org/J4.x:CLI_exam
 cli-development=cli-update.md=https://docs.joomla.org/J4.x:CLI_Update
 cli-development=writing-a-cli-application.md=https://docs.joomla.org/J4.x:Writing_A_CLI_Application
 
+coding-examples=form-validation.md=https://docs.joomla.org/J4.x:Joomla_4_Tips_and_Tricks:_Form_Validation_Basics
 coding-examples=tips-and-tricks-for-joomla-4-developers.md=https://docs.joomla.org/J4.x:Tips_and_Tricks_for_Joomla_4_Developers
 coding-examples=using-bootstrap-components-in-joomla-4.md=https://docs.joomla.org/J4.x:Using_Bootstrap_Components_in_Joomla_4
 coding-examples=how-to-use-the-date-class.md=https://docs.joomla.org/How_to_use_JDate
